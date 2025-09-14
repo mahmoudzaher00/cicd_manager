@@ -42,7 +42,7 @@ name: Android Fastlane with Firebase App Distribution
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 jobs:
