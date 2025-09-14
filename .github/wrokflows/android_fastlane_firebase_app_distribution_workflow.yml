@@ -2,8 +2,7 @@ name: Android Fastlane with Firebase App Distribution
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -25,8 +24,7 @@ jobs:
         with:
           channel: stable
 
-      # Use BUNDLE_GEMFILE to point bundler at android/Gemfile
-      - name: Setup Ruby (bundler cache)
+      - name: Setup Ruby (with bundler cache)
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
@@ -40,4 +38,3 @@ jobs:
           BUNDLE_GEMFILE: android/Gemfile
         run: bundle exec fastlane android firebase_distribution
         working-directory: android
-
